@@ -1,2 +1,30 @@
-<h1>Upload file here when ready</h1>
-{{ test }}
+{% load static %}
+<html>
+    <head>
+        <title>File Upload Service</title>
+        <link rel="stylesheet" href="{% static 'upload/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'upload/main.css' %}">
+    </head>
+    <body>
+        <div id="container">
+            <h1>☁️ Cloud Storage ☁️</h1>
+            <form id="upload-form" class="uploader" action="/api/upload/" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input id="file-upload" type="file" name="file" />
+              
+                <label for="file-upload" id="file-label">
+                  <div id="upload-area">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <div></div>
+                    <span id="upload-btn" class="upload-button">Browse your computer</span>
+                  </div>
+                  <div id="uploading-text" class="hidden">
+                    Uploading...
+                  </div>
+                </label>
+              </form>
+        </div>
+
+        <script src="{% static 'upload/upload.js' %}"></script>
+    </body>
+</html>

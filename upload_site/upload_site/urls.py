@@ -20,5 +20,6 @@ from upload import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index)
+    path('', views.index),
+    path('api/upload/', views.test_post)
 ]

@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from google.cloud import storage
 
@@ -39,3 +39,12 @@ def download_blob(source_blob_name, destination_file_name):
             source_blob_name, bucket_name, destination_file_name
         )
     )
+    
+def test_post(request):
+    print('received a request')
+    print(request.FILES)
+
+
+    template = loader.get_template('upload/success.html')
+    context = { 'test': 'new context' }
+    return HttpResponse(template.render(context, request))
