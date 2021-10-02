@@ -72,6 +72,7 @@ WSGI_APPLICATION = 'upload_site.wsgi.application'
 # storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = 'cps-630-bucket'
+GOOGLE_APPLICATION_CREDENTIALS = os.path.join(BASE_DIR, 'itc-630-homework-1-ac0fcb240f91.json')
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -124,3 +125,5 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+

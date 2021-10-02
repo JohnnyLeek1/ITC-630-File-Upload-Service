@@ -1,6 +1,8 @@
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from google.cloud import storage
+from django.conf import settings
+import os
 
 bucket_name = "cps-630-bucket"
 
@@ -13,6 +15,8 @@ def upload_file(upload_file, destination_blob_name):
     """Uploads file to bucket"""
     # upload_file is the file to upload
     # destination_blob_name is the id of GCS object
+
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = settings.GOOGLE_APPLICATION_CREDENTIALS
 
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
@@ -44,6 +48,7 @@ def test_post(request):
     print('received a request')
     print(request.FILES)
 
+    upload_file(request.FILES['file'], 'test_blob')
 
     template = loader.get_template('upload/success.html')
     context = { 'test': 'new context' }
