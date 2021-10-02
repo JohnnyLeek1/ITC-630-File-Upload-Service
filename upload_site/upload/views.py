@@ -51,5 +51,5 @@ def test_post(request):
     upload_file(request.FILES['file'], request.FILES['file'].name)
 
     template = loader.get_template('upload/success.html')
-    context = { 'test': 'new context' }
+    context = { 'url': f'https://storage.googleapis.com/cps-630-bucket/{request.FILES["file"].name}' }
     return HttpResponse(template.render(context, request))
