@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: linear-gradient(45deg, rgb(169, 201, 255) 0%, rgb(255, 187, 236) 100%);
+}
+
+#container > h1 {
+    font-size: 5rem;
+    font-weight: 100;
+
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#file-label {
+    float: left;
+    width: 50vw;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #eee;
+    border-radius: 7px;
+    border: 3px solid #ddd;
+    transition: all 0.2s ease;
+
+    user-select: none;
+    margin: 2rem;
+}
+
+#file-label:hover {
+    border-color: #ad4589;
+    border: 3px solid #ad4589;
+    box-shadow: inset 0 0 0 6px #ddd;
+}
+
+#upload-btn {
+    display: inline-block;
+    margin: 0.5rem;
+    clear:both;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
+    padding: 0 1rem;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+
+    transition: all 0.2s ease-in-out;
+    background: #ad4589;
+    border-color: #ad4589;
+    cursor: pointer;
+}
+
+#upload-area > i {
+    transform: scale(3);
+    padding: 2rem;
+}
+
+input {
+    display: none;
+}
+
+#upload-area {
+    width: 100%;
+    min-width: 300px;
+}
+
+.hidden {
+    display: none !important;
+}

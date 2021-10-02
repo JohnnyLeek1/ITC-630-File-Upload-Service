@@ -48,7 +48,7 @@ def test_post(request):
     print('received a request')
     print(request.FILES)
 
-    upload_file(request.FILES['file'], 'test_blob')
+    upload_file(request.FILES['file'], request.FILES['file'].name)
 
     template = loader.get_template('upload/success.html')
     context = { 'test': 'new context' }
